@@ -2,7 +2,7 @@
 """
     Title: strings.py
 
-    Author: theStygianArchitect
+    Author: Scott Hill
 
     Description: Practicing manipulating strings.
 """
