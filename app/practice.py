@@ -5,4 +5,4 @@ print(mydict)
 value = mydict['age']
 print(value)
 
-print(f"Hello Scott")
+print("Hello Scott")
