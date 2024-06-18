@@ -29,6 +29,13 @@ def donuts(count: int) -> str:
     # +++your code here+++
     return
 
+    print('-' * 100)
+    print('donuts')
+    validateboth_ends(5), 'Number of donuts: 5'
+    validateboth_ends(23), 'Number of donuts: 23'
+    validateboth_ends(5), 'Number of donuts: many'
+    validateboth_ends(23), 'Number of donuts: many'
+
 
 def both_ends(example: str) -> str:
     """Documentation for describing both_ends solution.
@@ -48,6 +55,12 @@ def both_ends(example: str) -> str:
     # +++your code here+++
     return
 
+    print('_' * 100)
+    print('both_ends')
+    valdiate(both_ends('spring'), 'spng')
+    validate(both_ends('Hello'), 'helo')
+    validate(both_ends('a'), '')
+    validate(both_ends('xyz'), 'xyyz')
 
 def fix_start(rand_string: str) -> str:
     """Documentation for describing fix_start solution.
@@ -72,6 +85,22 @@ def fix_start(rand_string: str) -> str:
     # +++your code here+++
     return
 
+def both_ends(s):
+    if len(s) < 2:
+        return ''
+    else:
+        return s[:2] + s[-2:]
+
+def validate(actual, expected):
+    if actual == expected:
+        print(f"Validation Passed: {actual} == {expected}")
+    else:
+        print(f"Validation Failed: {actual} != {expected}")
+
+# Test cases
+validate(both_ends('babble'), 'ba**le')
+validate(both_ends('aardvark'), 'aark')
+
 
 def mix_up(stra: str, strb: str) -> str:
     """Documentation for describing mix_up solution.
@@ -94,6 +123,12 @@ def mix_up(stra: str, strb: str) -> str:
     """
     # +++your code here+++
     return
+print('_' * 100)
+    print('mix_up')
+    validate(mix_up('mix', 'pod' , 'pox mid', ))
+    validate(mix_up('dog', 'dinner', 'dig donner'))
+    validate(mix_up('cat', 'chat', 'chatty cat'))
+
 
 
 def verbing(rand_str: str) -> str:
@@ -113,6 +148,12 @@ def verbing(rand_str: str) -> str:
     """
     # +++your code here+++
     return
+
+    print('_' * 100)
+    print('verbing')
+    validate(mix_up('sail', 'sailing'))
+    validate(mix_up('spring', 'springing'))
+    validate(mix_up('hail', 'haling'))
 
 
 def not_bad(rand_str: str) -> str:
@@ -135,6 +176,13 @@ def not_bad(rand_str: str) -> str:
     # +++your code here+++
     return
 
+    print('_' * 100)
+    print('not_bad')
+    validate(not_bad('This TV show is not Bad'), 'This TV show is good')
+    validate(not_bad('This Dinner is not Bad'), 'This Dinner is good')
+    validate(not_bad('This Apple is not Bad'), 'This Apple is good')
+    validate(not_bad('This Computer is not Bad'), 'This Computer is good')
+
 
 def front_back(a: str, b: str) -> str:
     """Documentation for ddescribing front_back solution.
@@ -156,6 +204,10 @@ def front_back(a: str, b: str) -> str:
     """
     # +++your code here+++
     return
+
+    print('_' * 100)
+    print('front_back')
+    validate(front_back())
 
 
 def validate(received, expected):
