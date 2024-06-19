@@ -27,7 +27,10 @@ def donuts(count: int) -> str:
 
     """
     # +++your code here+++
-
+    if count >= 10:
+        return 'Number of donuts: many'
+    else:
+        return f'Number of donuts: {count}'
     return
 
 
@@ -73,6 +76,9 @@ def fix_start(rand_string: str) -> str:
 
     """
     # +++your code here+++
+    first_char = rand_string[0]
+    modified_string = first_char + rand_string[1:].replace(first_char, '*')
+    return modified_string
     return
 
 
@@ -96,6 +102,11 @@ def mix_up(stra: str, strb: str) -> str:
 
     """
     # +++your code here+++
+    new_stra = strb[:2] + stra[2:]
+    new_strb = stra[:2] + strb[2:]
+    result = new_stra + " " + new_strb
+    return result
+
     return
 
 
@@ -115,6 +126,7 @@ def verbing(rand_str: str) -> str:
 
     """
     # +++your code here+++
+
     return
 
 
