@@ -122,8 +122,21 @@ def verbing(rand_str: str) -> str:
 
     """
     # +++your code here+++
+    if len(rand_str) < 3:
+        return rand_str
+    elif rand_str.endswith('ing'):
+        return rand_str[:-3] + 'ly'  #Replace 'ing' with 'ly'
+    else:
+        return rand_str + 'ing'
 
-    return
+#Example Usage
+print(make_verbing('play'))       # Outplay "playing"print(make_verbing('playing'))    # Outplay "playing"
+print(make_verbing('go'))         # Outplay "go"
+
+
+
+
+
 
 
 def not_bad(rand_str: str) -> str:
@@ -144,7 +157,8 @@ def not_bad(rand_str: str) -> str:
 
     """
     # +++your code here+++
-    return
+
+
 
 
 def front_back(a: str, b: str) -> str:
@@ -166,6 +180,8 @@ def front_back(a: str, b: str) -> str:
 
     """
     # +++your code here+++
+
+
     return
 
 
