@@ -130,8 +130,8 @@ def verbing(rand_str: str) -> str:
         return rand_str + 'ing'
 
 #Example Usage
-print(make_verbing('play'))       # Outplay "playing"print(make_verbing('playing'))    # Outplay "playing"
-print(make_verbing('go'))         # Outplay "go"
+print(verbing('play'))       # Outplay "playing"print(make_verbing('playing'))    # Outplay "playing"
+print(verbing('go'))         # Outplay "go"
 
 
 
