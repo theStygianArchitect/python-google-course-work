@@ -157,8 +157,16 @@ def not_bad(rand_str: str) -> str:
 
     """
     # +++your code here+++
+    not_index = rand_str.find('not')
+    bad_index = rand_str.find('bad')
 
-
+    # Check if 'bad' follows 'not' and both substrings exist in the strings
+    if not_index != -1 and bad_index != -1 and bad_index > not_index:
+        # Replace the substring form 'not' to 'bad' with 'good'
+    return rand_str[:not_index] + 'good' + rand_str[bad_index + 3:]
+else:
+    # If conditions are not met, return the original string
+    return rand_str
 
 
 def front_back(a: str, b: str) -> str:
@@ -180,9 +188,15 @@ def front_back(a: str, b: str) -> str:
 
     """
     # +++your code here+++
+a_mid = (len(a) + 1) // 2
+b_mid = (len(b) + 1) // 2
 
+a_front = a[:a_mid]
+a_back = a[a_mid:]
+b_front = b[:b_mid]
+b_back = b[b_mid:]
 
-    return
+return a_front + b_front + a_back + b_back
 
 
 def validate(received, expected):
