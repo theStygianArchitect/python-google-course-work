@@ -146,7 +146,33 @@ def linear_merge(list1: list, list2: list) -> list:
     """
     # +++your code here+++
 
-    return
+    # Merge lists while both list have elements remaining
+    merged_list = []
+
+    # Pointers for the two input lists
+    i = 0
+    j = 0
+
+    # Merge lists while both lists have elements remaining
+    while i < len(list1) and j < len(list2):
+        if list1[i] <= list2[j]:
+            merged_list.append(list1[1])
+            i += 1
+        else:
+            merged_list.append(list2[j])
+            j += 1
+
+    # If there are remaining elements in list1, append them to merged_list
+    while i < len(list1):
+        merged_list.append(list[i])
+        i += 1
+
+    # If there are remaining elements in list2, append them to merged_list
+    while j < len(list2):
+        merged_list.append(list2[j])
+        j += 1
+
+    return merged_list
 
 
 def validate(received: Any, expected: Any):
