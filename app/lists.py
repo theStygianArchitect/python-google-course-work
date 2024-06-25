@@ -26,7 +26,16 @@ def match_ends(words: list) -> int:
 
     """
     # +++your code here+++
-    return
+    count = 0
+    for word in words:
+        if len(word) >= 2 and word[0] == word[-1]:
+            count += 1
+    return count
+
+    words = ['abc', 'azx', 'bbb']
+    result = match_ends(words)
+    print(result)
+
 
 
 def front_x(words: list) -> list:
@@ -48,7 +57,15 @@ def front_x(words: list) -> list:
 
     """
     # +++your code here+++
-    return
+
+    x_list = [word for word in words if word.startswith('x')]
+    other_list = [word for word in words if not word.startswith('x')]
+
+    return sorted(x_list)  + sorted(other_list)
+
+words = ['mix', 'xyz', 'xanadu', 'aardvark', 'apple']
+sorted_words = front_x(words)
+print(sorted_words) #Output; ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
 
 
 def sort_last(tuples: list) -> list:
@@ -70,7 +87,15 @@ def sort_last(tuples: list) -> list:
 
     """
     # +++your code here+++
-    return
+    def sort_last(tuples: list) -> list:
+        return sorted(tuples, key=lambda x: x[-1])
+    tuples = [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
+    tuples = [(3, 1), (1, 2), (2, 3)]
+    tuples = [(1, 7), (1, 3), (3, 4, 5), (2, 2)]
+
+    sorted_tuples = sort_last(tuples)
+    print(sorted_tuples)
+
 
 
 def remove_adjacent(nums: list) -> list:
@@ -90,7 +115,15 @@ def remove_adjacent(nums: list) -> list:
 
     """
     # +++your code here+++
-    return
+    if not nums:
+        return []
+    result = [nums[0]]
+
+    for num in nums[1:]:
+        if num != result[-1]:
+            result.append(num)
+
+    return result
 
 
 def linear_merge(list1: list, list2: list) -> list:
@@ -112,6 +145,7 @@ def linear_merge(list1: list, list2: list) -> list:
 
     """
     # +++your code here+++
+
     return
 
 
