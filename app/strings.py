@@ -122,21 +122,19 @@ def verbing(rand_str: str) -> str:
 
     """
     # +++your code here+++
+
+    # Shayne Feedback: This doesn't pass all examples.
+
     if len(rand_str) < 3:
         return rand_str
     elif rand_str.endswith('ing'):
-        return rand_str[:-3] + 'ly'  #Replace 'ing' with 'ly'
+        return rand_str[:-3] + 'ly'  # Replace 'ing' with 'ly'
     else:
         return rand_str + 'ing'
 
-#Example Usage
-print(verbing('play'))       # Outplay "playing"print(make_verbing('playing'))    # Outplay "playing"
-print(verbing('go'))         # Outplay "go"
-
-
-
-
-
+    # Example Usage
+    print(verbing('play'))  # Outplay "playing"print(make_verbing('playing'))    # Outplay "playing"
+    print(verbing('go'))  # Outplay "go"
 
 
 def not_bad(rand_str: str) -> str:
@@ -163,10 +161,10 @@ def not_bad(rand_str: str) -> str:
     # Check if 'bad' follows 'not' and both substrings exist in the strings
     if not_index != -1 and bad_index != -1 and bad_index > not_index:
         # Replace the substring form 'not' to 'bad' with 'good'
-    return rand_str[:not_index] + 'good' + rand_str[bad_index + 3:]
-else:
-    # If conditions are not met, return the original string
-    return rand_str
+        return rand_str[:not_index] + 'good' + rand_str[bad_index + 3:]
+    else:
+        # If conditions are not met, return the original string
+        return rand_str
 
 
 def front_back(a: str, b: str) -> str:
@@ -188,15 +186,15 @@ def front_back(a: str, b: str) -> str:
 
     """
     # +++your code here+++
-a_mid = (len(a) + 1) // 2
-b_mid = (len(b) + 1) // 2
+    a_mid = (len(a) + 1) // 2
+    b_mid = (len(b) + 1) // 2
 
-a_front = a[:a_mid]
-a_back = a[a_mid:]
-b_front = b[:b_mid]
-b_back = b[b_mid:]
+    a_front = a[:a_mid]
+    a_back = a[a_mid:]
+    b_front = b[:b_mid]
+    b_back = b[b_mid:]
 
-return a_front + b_front + a_back + b_back
+    return a_front + b_front + a_back + b_back
 
 
 def validate(received, expected):

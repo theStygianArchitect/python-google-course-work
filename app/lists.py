@@ -32,10 +32,6 @@ def match_ends(words: list) -> int:
             count += 1
     return count
 
-    words = ['abc', 'azx', 'bbb']
-    result = match_ends(words)
-    print(result)
-
 
 
 def front_x(words: list) -> list:
@@ -57,15 +53,12 @@ def front_x(words: list) -> list:
 
     """
     # +++your code here+++
-    x_list = [word for word in words if word.startswith('x')]
-    other_list = [word for word in words if not word.startswith('x')]
+    # x_list = [word for word in words if word.startswith('x')]
+    # other_list = [word for word in words if not word.startswith('x')]
+
+    # Shayne Feedback: write out the loop.
 
     return sorted(x_list) + sorted(other_list)
-
-
-words = ['mix', 'xyz', 'xanadu', 'aardvark', 'apple']
-sorted_words = front_x(words)
-print(sorted_words)  # Output; ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
 
 
 
@@ -89,15 +82,18 @@ def sort_last(tuples: list) -> list:
 
     """
     # +++your code here+++
-    def sort_last(tuples: list) -> list:
-        return sorted(tuples, key=lambda x: x[-1])
+    # def sort_last(tuples: list) -> list:
+    #     return sorted(tuples, key=lambda x: x[-1])
 
-    tuples = [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
-    tuples = [(3, 1), (1, 2), (2, 3)]
-    tuples = [(1, 7), (1, 3), (3, 4, 5), (2, 2)]
+    # tuples = [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
+    # tuples = [(3, 1), (1, 2), (2, 3)]
+    # tuples = [(1, 7), (1, 3), (3, 4, 5), (2, 2)]
+    #
+    # sorted_tuples = sort_last(tuples)
+    # print(sorted_tuples)
 
-    sorted_tuples = sort_last(tuples)
-    print(sorted_tuples)
+    # Shayne Feedback: Redo this and don't only return the one item
+    return
 
 
 
@@ -118,6 +114,7 @@ def remove_adjacent(nums: list) -> list:
 
     """
     # +++your code here+++
+    return
 
 
 def linear_merge(list1: list, list2: list) -> list:
@@ -139,6 +136,9 @@ def linear_merge(list1: list, list2: list) -> list:
 
     """
     # +++your code here+++
+
+    # Shayne feedback: solve this problem with one pass.
+
     # Merge lists while both list have elements remaining
     merged_list = []
 
