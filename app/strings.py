@@ -125,16 +125,13 @@ def verbing(rand_str: str) -> str:
 
     # Shayne Feedback: This doesn't pass all examples.
 
-    if len(rand_str) < 3:
-        return rand_str
-    elif rand_str.endswith('ing'):
-        return rand_str[:-3] + 'ly'  # Replace 'ing' with 'ly'
+    if len(rand_str) >= 3:
+        if rand_str.endswith('ing'):
+            return rand_str + 'ly'
+        else:
+            return rand_str + 'ing'
     else:
-        return rand_str + 'ing'
-
-    # Example Usage
-    print(verbing('play'))  # Outplay "playing"print(make_verbing('playing'))    # Outplay "playing"
-    print(verbing('go'))  # Outplay "go"
+        return rand_str
 
 
 def not_bad(rand_str: str) -> str:
@@ -155,16 +152,7 @@ def not_bad(rand_str: str) -> str:
 
     """
     # +++your code here+++
-    not_index = rand_str.find('not')
-    bad_index = rand_str.find('bad')
 
-    # Check if 'bad' follows 'not' and both substrings exist in the strings
-    if not_index != -1 and bad_index != -1 and bad_index > not_index:
-        # Replace the substring form 'not' to 'bad' with 'good'
-        return rand_str[:not_index] + 'good' + rand_str[bad_index + 3:]
-    else:
-        # If conditions are not met, return the original string
-        return rand_str
 
 
 def front_back(a: str, b: str) -> str:
