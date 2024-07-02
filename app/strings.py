@@ -152,8 +152,19 @@ def not_bad(rand_str: str) -> str:
 
     """
     # +++your code here+++
+    not_index = rand_str.find('not')
+    bad_index = rand_str.find('bad')
 
+    # Check if 'bad' follows 'not' and both substrings exist in the strings
+    if not_index != -1 and bad_index != -1 and bad_index > not_index:
+        # Replace the substring form 'not' to 'bad' with 'good'
+        return rand_str[:not_index] + 'good' + rand_str[bad_index + 3:]
+    else:
+        # If conditions are not met, return the original string
+        return rand_str
 
+    example_str = "This dinner is not that bad!"
+    print(not_bad(example_str))  # Output: This dinner is good!
 
 def front_back(a: str, b: str) -> str:
     """Documentation for ddescribing front_back solution.
