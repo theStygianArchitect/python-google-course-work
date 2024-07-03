@@ -53,15 +53,31 @@ def front_x(words: list) -> list:
 
     """
     # +++your code here+++
-    # x_list = [word for word in words if word.startswith('x')]
-    # other_list = [word for word in words if not word.startswith('x')]
-
-    # Shayne Feedback: write out the loop.
-
-    return sorted(x_list) + sorted(other_list)
 
 
+def front_x(words):
+    # Seperate words starting with 'x' and others
+    x_words = []
+    other_words = []
 
+    # Partitioning words into x_words and other_words
+    for word in words:
+        if word.startswith('x'):
+            x_words.append(word)
+        else:
+            other_words.append(word)
+
+    # Sort both lists
+    x_words.sort()
+    other_words.sort()
+
+    # Concatenate x_words and other_words
+    sorted_words = x_words + other_words
+
+    return sorted_words
+
+words = ['mix', 'xyz', 'apple', 'xanadu', 'aardvark']
+print(front_x(words))
 
 def sort_last(tuples: list) -> list:
     """Document for describing sort_last solution.
@@ -114,7 +130,13 @@ def remove_adjacent(nums: list) -> list:
 
     """
     # +++your code here+++
-    return
+    result = []
+    for num in nums:
+        if len(result) == 0 or num != result[-1]:
+            result.append(num)
+
+
+    return result
 
 
 def linear_merge(list1: list, list2: list) -> list:
@@ -137,35 +159,26 @@ def linear_merge(list1: list, list2: list) -> list:
     """
     # +++your code here+++
 
-    # Shayne feedback: solve this problem with one pass.
+    merged = []
+    i, j = 0, 0
 
-    # Merge lists while both list have elements remaining
-    merged_list = []
-
-    # Pointers for the two input lists
-    i = 0
-    j = 0
-
-    # Merge lists while both lists have elements remaining
     while i < len(list1) and j < len(list2):
         if list1[i] <= list2[j]:
-            merged_list.append(list1[1])
+            merged.append(list1[i])
             i += 1
         else:
-            merged_list.append(list2[j])
+            merged.append(list2[j])
             j += 1
 
-    # If there are remaining elements in list1, append them to merged_list
-    while i < len(list1):
-        merged_list.append(list[i])
-        i += 1
+    # Append remaining elements from list1 (if any)
+    merged.extend(list1[i:])
 
-    # If there are remaining elements in list2, append them to merged_list
-    while j < len(list2):
-        merged_list.append(list2[j])
-        j += 1
+    # Append remaining elements from list2 (if any)
+    merged.extend(list2[j:])
 
-    return merged_list
+
+    return merged
+
 
 
 def validate(received: Any, expected: Any):
