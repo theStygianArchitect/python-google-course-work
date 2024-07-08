@@ -15,7 +15,7 @@ it into one giant string and split it once.
 
 Build a "mimic" dict that maps each word that appears in the file
 to a list of all the words that immediately follow that word in the file.
-The list of words can be be in any order and should include
+The list of words can be in any order and should include
 duplicates. So for example the key "and" might have the list
 ["then", "best", "then", "after", ...] listing
 all the words which came after "and" in the text.
@@ -48,13 +48,57 @@ def mimic_dict(filename):
     """Returns mimic dict mapping each word to list of words which follow it."""
     # +++your code here+++
 
-    return
+
+def print_mimic(mimic_dict):
+    """Given mimic dict and start word, prints 200 random words."""
+    text_length = 200  # Number of words to print
+    current_word = ''  # Start with an empty string as the initial word
+    output = []  # List to store the generated output
+
+    for _ in range(text_length):
+        next_word = random.choice(mimic_dict.get(current_word, ['']))  # Randomly choose next word from mimic_dict
+        output.append(next_word)  # Append chosen word to output list
+        current_word = next_word  # Update current word to be the chosen word for next iteration
+
+    # Join the words with spaces and print with line breaks at 70 characters
+    output_text = ' '.join(output)
+    for i in range(0, len(output_text), 70):
+        print(output_text[i:i + 70])
 
 
 def print_mimic(mimic_dict, word):
     """Given mimic dict and start word, prints 200 random words."""
     # +++your code here+++
-    return
+    text_length = 200  # Number of words to print
+    current_word = ''  # Start with an empty string as the initial word
+    output = []  # List to store the generated output
+
+    for _ in range(text_length):
+        next_word = random.choice(mimic_dict.get(current_word, ['']))  # Randomly choose next word from mimic_dict
+        output.append(next_word)  # Append chosen word to output list
+        current_word = next_word  # Update current word to be the chosen word for next iteration
+
+    # Join the words with spaces and print with line breaks at 70 characters
+    output_text = ' '.join(output)
+    for i in range(0, len(output_text), 70):
+        print(output_text[i:i + 70])
+def generate_random_text(mimic_dict, start_word, num_words=200):
+    random_text = []
+    current_word = start_word
+
+    for _ in range(num_words):
+        if current_word in mimic_dict:
+            next_word = random.choices(list(mimic_dict[current_word].keys()),
+                                       list(mimic_dict[current_word].values()))[0]
+            random-text.append(next_word)
+            current_word = next_word
+        else:
+            break
+
+    return random_text
+
+
+
 
 
 # Provided main(), calls mimic_dict() and mimic()
