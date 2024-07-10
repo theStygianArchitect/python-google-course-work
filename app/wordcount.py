@@ -38,8 +38,49 @@ print_words() and print_top().
 """
 
 import sys
+from collections import Counter
 
-# +++your code here+++
+
+def build_word_count_dict(filename):
+    word_count = Counter()
+    with open(filename, 'r') as file:
+        for line in file:
+            words = line.split()  # Split line into words
+            words = [word.lower() for word in words]  # Convert words to lowercase
+            word_count.update(words)  # Update word count
+    return word_count
+
+
+def print_words(filename):
+    word_count = build_word_count_dict(filename)
+    # Get the 20 most common words
+    top_words = word_count.most_common(20)
+    for word, count in top_words:
+        print(f"{word} {count}")
+
+
+def print_top(filename):
+    # Assuming you want the same functionality for --topcount as --count
+    print_words(filename)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python script.py --count|--topcount filename")
+        sys.exit(1)
+
+    flag = sys.argv[1]
+    filename = sys.argv[2]
+
+    if flag == "--count":
+        print_words(filename)
+    elif flag == "--topcount":
+        print_top(filename)
+    else:
+        print("Invalid flag. Use --count or --topcount.")
+        sys.exit(1)
+
+
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
 # and builds and returns a word/count dict for it.
