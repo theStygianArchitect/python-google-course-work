@@ -98,18 +98,10 @@ def sort_last(tuples: list) -> list:
 
     """
     # +++your code here+++
-    # def sort_last(tuples: list) -> list:
-    #     return sorted(tuples, key=lambda x: x[-1])
+    tuples_list = [(1, 7), (1, 3), (3, 4, 5), (2, 2)]
+    sorted_list = sorted(tuples_list, key=lambda x: x[-1])
+    print(sorted_list)
 
-    # tuples = [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
-    # tuples = [(3, 1), (1, 2), (2, 3)]
-    # tuples = [(1, 7), (1, 3), (3, 4, 5), (2, 2)]
-    #
-    # sorted_tuples = sort_last(tuples)
-    # print(sorted_tuples)
-
-    # Shayne Feedback: Redo this and don't only return the one item
-    return
 
 
 
